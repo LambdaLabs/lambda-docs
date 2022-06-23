@@ -8,63 +8,63 @@ Here are some useful commands to know for using Ubuntu and Lambda Stack:
 
 ## System monitoring
 
-| Command         | Description |
-| -------         | ----------- |
-| top             | XXX         |
-| htop            | XXX         |
-| nvtop           | XXX         |
-| nvidia-smi-pmon | XXX         |
-| ps aux          | XXX         |
-| free            | XXX         |
+| Command           | Description                                                                            |
+| -------           | -----------                                                                            |
+| `top`             | Displays processes and other system information                                        |
+| `htop`            | Displays processes and other system information, and allows interaction with processes |
+| `nvtop`           | Displays status of NVIDIA GPUs                                                         |
+| `nvidia-smi-pmon` | ???                                                                                    |
+| `ps aux`          | Outputs list of every process on the system                                            |
+| `free`            | Outputs amount of free memory and used memory                                          |
 
 ## Navigating and finding files
 
-| Command                  | Description                                   |
-| -------                  | -----------                                   |
-| pwd                      | present working directory                     |
-| ls                       | see files in current directory                |
-| cd                       | change to a new directory                     |
-| find . -name 'example\*' | find files that start with the name 'example' |
+| Command                     | Description                                                                             |
+| -------                     | -----------                                                                             |
+| `pwd`                       | Outputs name of directory you're currently working in                                   |
+| `ls`                        | Lists the files and directories in your current working directory                       |
+| `cd NEW_DIRECTORY`          | Changes working directory to *`NEW_DIRECTORY`*                                          |
+| `find . -name 'FILE_NAME*'` | Recursively finds files in the current directory that start with the name *`FILE_NAME`* |
 
 ## Disk and file systems
 
-| Command               | Description                                                 |
-| -------               | -----------                                                 |
-| df -h                 | Show much space is in all file systems                      |
-| df -ih                | Show how many inodes (number of files) on each file system  |
-| du -s * \| sort -n    | Show the largest files/directories in the current directory |
-| du -sh example.tar.gz | Show how large a file 'example.tar.gz' is                   |
+| Command              | Description                                                    |
+| -------              | -----------                                                    |
+| `df -h`              | Outputs used and available space on each file system           |
+| `df -ih`             | Outputs inode usage and inode availability on each file system |
+| `du -s * \| sort -n` | Outputs list of current directory's contents, sorted by size   |
+| `du -sh FILE_NAME`   | Outputs size of *`FILE_NAME`*                                  |
 
 ## Networking
 
-| Command             | Description                                            |
-| -------             | -----------                                            |
-| ip address show     | Long list of information about interfaces              |
-| ip -br address show | more brief version of the commands                     |
-| ip link             | show links                                             |
-| ip -br link         | brief view of the links                                |
-| ip route            | show routes on your system                             |
-| ping -c 3 10.0.0.1  | Ping the IP address 10.0.0.1 three times               |
-| traceroute 10.0.0.1 | Check the route and performance to IP address 10.0.0.1 |
-| /etc/netplan        | Location of the network interface configurations.      |
+| Command                 | Description                                                         |
+| -------                 | -----------                                                         |
+| `ip address show`       | Outputs IP addresses detailed information about network interfaces  |
+| `ip -br address show`   | Outputs IP addresses and brief information about network interfaces |
+| `ip link`               | Outputs detailed information about network interfaces               |
+| `ip -br link`           | Outputs brief information about network interfaces                  |
+| `ip route`              | Outputs network routes                                              |
+| `ping -c 3 IP_ADDRESS`  | Pings *`IP_ADDRESS`* three times                                    |
+| `traceroute IP_ADDRESS` | Outputs route, ping time, and latency to reach *`IP_ADDRESS`*       |
+| `/etc/netplan`          | Location of the network interface configurations.                   |
 
 ## Managing users
 
-| Command                         | Description                                             |
-| -------                         | -----------                                             |
-| group <username>                | Check if there is a ‘user’ and which groups they are in |
-| sudo adduser <username>         | Adding a new user                                       |
-| sudo deluser <username>         | Deleting a existing username                            |
-| sudo adduser <username> <group> | Add a ‘user’ to a ‘group’ both that existing            |
-| sudo deluser <username> <group> | Delete/remove a ‘user’ from a ‘group’                   |
+| Command                       | Description                                |
+| -------                       | -----------                                |
+| `group USERNAME`              | Outputs the groups that *`USERNAME`* is in |
+| `sudo adduser USERNAME`       | Adds a new user to the system              |
+| `sudo deluser USERNAME`       | Deletes an existing user from the system   |
+| `sudo adduser USERNAME GROUP` | Adds *`USERNAME`* to *`GROUP`*             |
+| `sudo deluser USERNAME GROUP` | Removes *`USERNAME`* from *`GROUP`*        |
 
 ## Firewall
 
-| Command            | Description                |
-| -------            | -----------                |
-| sudo iptables -L   | List iptables rules        |
-| sudo ufw status    | Show the status of the ufw |
-| sudo ufw allow ssh | XXX                        |
+| Command                  | Description                                 |
+| -------                  | -----------                                 |
+| `sudo iptables -L`       | Outputs current firewall rules              |
+| `sudo ufw status`        | Displays the status of the firewall         |
+| `sudo ufw allow SERVICE` | Allows *`SERVICE`* traffic through firewall |
 
 ## Linux and Lambda Stack upgrades and packaging
 
