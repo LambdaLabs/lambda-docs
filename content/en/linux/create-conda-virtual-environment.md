@@ -54,6 +54,11 @@ To create a conda virtual environment:
    Replace **PACKAGES** with the list of packages you want to install in your
    virtual environment.
 
+   {{% alert title="Note" color="info" %}}
+   conda doesn't use packages installed locally, including packages part of
+   [Lambda Stack](https://lambdalabs.com/lambda-stack-deep-learning-software).
+   {{% /alert %}}
+
    (Optional) Replace **OPTIONS** with options for the `conda create` command.
    [See the `conda create` documentation](https://docs.conda.io/projects/conda/en/latest/commands/create.html)
    to learn more about available options.
@@ -97,6 +102,10 @@ To create a conda virtual environment:
    Number of GPUs:  1
    ```
 
+{{% alert title="Tip" color="success" %}}
+To deactivate the conda environment, run `conda deactivate`.
+{{% /alert %}}
+
 {{% alert title="Note" color="info" %}}
 Locally installed packages can conflict with packages installed in virtual
 environments. For this reason, it's recommended to uninstall locally installed
@@ -108,19 +117,14 @@ To uninstall packages installed locally for your user only, run:
 pip uninstall -y $(pip -v list | grep ${HOME}/.local | awk '{printf "%s ", $1}')
 ```
 
+**Don't run the above uninstall command on Lambda GPU Cloud on-demand
+instances!** The command will break programs including pip and JupyterLab.
+
 To uninstall packages installed locally, system-wide (for all users), run:
 
 ```bash
 sudo pip uninstall -y $(pip -v list | grep /usr/local | awk '{printf "%s ", $1}')
 ```
-{{% /alert %}}
-
-{{% alert title="Warning" color="warning" %}}
-**Don't run the above uninstall commands on Lambda GPU Cloud on-demand
-instances!**
-
-The above uninstall commands remove all locally installed packages and, on
-on-demand instances, break programs including pip and JupyterLab.
 {{% /alert %}}
 
 {{% alert title="Tip" color="success" %}}
