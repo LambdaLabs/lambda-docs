@@ -24,7 +24,7 @@ The best solution at this time is to switch to a non-4K monitor, like 1080p.
 ## No audio from aux ports on Vector One
 
 ### Known issue with Ubuntu 22.04
-A bug in Ubuntu 22.04 can cause the front aux port to malfunction on some Vector One desktops and workstations. This issue is resolved in Ubuntu 24.04; however, Lambda Stack does not yet support this version. Once Lambda Stack moves to Ubuntu 24.04, this issue should be resolved.
+A bug in Ubuntu 22.04 can cause the front aux port to malfunction on some Vector One desktops. This issue is resolved in Ubuntu 24.04; however, Lambda Stack does not yet support this version. Once Lambda Stack moves to Ubuntu 24.04, this issue should be resolved.
 
 ### Test the rear audio port
 If your machine does not recognize audio devices connected to the front aux port, try using the rear audio port, which is lime green in color.
