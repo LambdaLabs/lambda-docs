@@ -1,7 +1,9 @@
 ---
 description: Describes how to use the Cloud API to create and manage Lambda resources
 tags:
+  - 1-click clusters
   - automation
+  - on-demand cloud
 ---
 
 # Cloud API
@@ -15,7 +17,7 @@ With the [Cloud API](https://cloud.lambdalabs.com/api/v1/docs), you can:
 *  [Get the details of a running instance](#getting-details-of-a-specific-instance).
 *  [Get a list of the instance types offered by Lambda GPU Cloud](#listing-instances-types-offered-by-lambda-gpu-cloud).
 *  [Manage your SSH keys](#managing-ssh-keys).
-*  [List your file systems](#listing-file-systems).
+*  [List your file systems](#listing-filesystems).
 
 !!! note
 
@@ -51,8 +53,7 @@ You can launch an instance from the command line using the
     curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/launch -d @request.json -H "Content-Type: application/json" | jq .
     ```
 
-Replace **API-KEY** with your actual API key.
-**Don't remove the trailing colon (:).**
+Replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
 
 ## Restarting instances
 
@@ -70,20 +71,19 @@ Replace **API-KEY** with your actual API key.
     }
     ```
 
-!!! tip
+      !!! tip
 
-    [Use the API to obtain the IDs of your instances](#listing-details-of-running-instances).
+       [Use the API to obtain the IDs of your instances](#listing-details-of-running-instances).
 
 3. Run the following command:
 
-```bash
-curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/restart -d @INSTANCE-IDS -H "Content-Type: application/json" | jq .
-```
+      ```bash
+      curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/restart -d @INSTANCE-IDS -H "Content-Type: application/json" | jq .
+      ```
 
-Replace **API-KEY** with your actual API key.
-**Don't remove the trailing colon (:).**
+Replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
 
-Replace **INSTANCE-IDS** with the name of the payload file you created in the
+Replace `INSTANCE-IDS` with the name of the payload file you created in the
 previous step.
 
 ## Terminating instances
@@ -102,21 +102,19 @@ previous step.
     }
     ```
 
-!!! tip
+      !!! tip
 
-    [Use the API to obtain the IDs of your instances](#listing-details-of-running-instances).
+       [Use the API to obtain the IDs of your instances](#listing-details-of-running-instances).
 
 3. Run the following command:
 
-```bash
-curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/terminate -d @INSTANCE-IDS -H "Content-Type: application/json" | jq .
-```
+      ```bash
+      curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-operations/terminate -d @INSTANCE-IDS -H "Content-Type: application/json" | jq .
+      ```
+      In this command,
 
-Replace **API-KEY** with your actual API key.
-**Don't remove the trailing colon (:).**
-
-Replace **INSTANCE-IDS** with the name of the payload file you created in
-the previous step.
+      * Replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
+      * Replace `INSTANCE-IDS` with the name of the payload file you created in the previous step.
 
 ## Listing details of running instances
 
@@ -130,8 +128,7 @@ run the following command:
 curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instances | jq .
 ```
 
-Replace **API-KEY** with your actual API key.
-**Don't remove the trailing colon (:).**
+In this command, replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
 
 ## Getting details of a specific instance
 
@@ -145,10 +142,10 @@ run the following command:
 curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instances/INSTANCE-ID | jq .
 ```
 
-Replace **API-KEY** with your actual API key.
-**Don't remove the trailing colon (:).**
+In this command,
 
-Replace **INSTANCE-ID** with the ID of the instance you want details about.
+* Replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
+* Replace `INSTANCE-ID` with the ID of the instance you want details about.
 
 ## Listing instances types offered by Lambda GPU Cloud
 
@@ -160,8 +157,7 @@ running the following command:
 curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/instance-types | jq .
 ```
 
-Replace **API-KEY** with your actual API key.
-**Don’t remove the trailing colon (:).**
+Replace `API-KEY` with your actual API key. **Don’t remove the trailing colon (`:`).**
 
 ## Managing SSH keys
 
@@ -172,12 +168,12 @@ You can use the [Cloud API](https://cloud.lambdalabs.com/api/v1/docs) to:
 * [List the SSH keys saved in your account](#list-the-ssh-keys-saved-in-your-account).
 * [Delete an SSH key from your account](#delete-an-ssh-key-from-your-account).
 
-!!! note
+!!! warning
 
     Following these instructions won't add the SSH key to existing instances.
 
     To add SSH keys to existing instances, read our FAQ on
-    [using more than one SSH key](../on-demand/getting-started#is-it-possible-to-use-more-than-one-ssh-key).
+    [using more than one SSH key](on-demand/getting-started.md#is-it-possible-to-use-more-than-one-ssh-key).
 
 !!! note
 
@@ -193,39 +189,35 @@ To add an existing SSH key to your account:
    [necessary payload](https://cloud.lambdalabs.com/api/v1/docs#operation/launchInstance).
    For example:
 
-    ```json
-    {
-      "name": "my-new-key",
-      "public_key": "ssh-ed25519 KEY COMMENT"
-    }
-    ```
+       ```json
+       {
+         "name": "my-new-key",
+         "public_key": "ssh-ed25519 KEY COMMENT"
+       }
+       ```
 3.  Run the following command:
 
-    ```bash
-    curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys -d @ssh-key.json -H "Content-Type: application/json" | jq .
-    ```
+       ```bash
+       curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys -d @ssh-key.json -H "Content-Type: application/json" | jq .
+       ```
 
-Replace **API-KEY** with your actual API key.
-**Don't remove the trailing colon (:).**
+In this command, replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
 
 ### Generate a new SSH key pair
 
 To generate a new SSH key pair:
 
 1. [Generate an API key](https://cloud.lambdalabs.com/api-keys) if you don’t have one already.
-2.  Run the following command:
+1.  Run the following command:
 
-    ```bash
-    curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys -d '{ "name": "my-generated-key" }' -H "Content-Type: application/json" | jq -r '.data.private_key' > my-generated-private-key.pem
-    ```
+       ```bash
+       curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys -d '{ "name": "my-generated-key" }' -H "Content-Type: application/json" | jq -r '.data.private_key' > my-generated-private-key.pem
+       ```
 
-   Replace **API-KEY** with your actual API key.
-   **Don't remove the trailing colon (:).**
-3. The private key for your SSH key pair will be saved as
-   `my-generated-private-key.pem`.
+      In this command, replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
+      This command saves the private key for your SSH key pair as `my-generated-private-key.pem`.
 
-   Run `chmod 400 my-generated-private-key.pem` to set the correct file
-   permissions for your private key.
+1. Run `chmod 400 my-generated-private-key.pem` to set the correct file permissions for your private key.
 
 ### List the SSH keys saved in your account
 
@@ -237,8 +229,7 @@ already have one. Then, run the following command:
 curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/ssh-keys | jq .
 ```
 
-Replace **API-KEY** with your actual API key.
-**Don’t remove the trailing colon (:).**
+In this command, replace `API-KEY` with your actual API key. **Don’t remove the trailing colon (`:`).**
 
 ### Delete an SSH key from your account
 
@@ -250,10 +241,10 @@ already have one. Then, run the following command:
 curl -u API-KEY: -X DELETE https://cloud.lambdalabs.com/api/v1/ssh-keys/SSH-KEY-ID
 ```
 
-Replace **API-KEY** with your actual API key.
- **Don't remove the trailing colon (:).**
+In this command,
 
-Replace **SSH-KEY-ID** with the ID of the SSH key you want to delete.
+* Replace `API-KEY` with your actual API key. **Don't remove the trailing colon (`:`).**
+* Replace `SSH-KEY-ID` with the ID of the SSH key you want to delete.
 
 !!! tip
 
@@ -261,16 +252,15 @@ Replace **SSH-KEY-ID** with the ID of the SSH key you want to delete.
 
 ## Listing filesystems
 
-To list your [persistent storage filesystems](filesystems) using the
+To list your [persistent storage filesystems](filesystems.md) using the
 [Cloud API](https://cloud.lambdalabs.com/api/v1/docs):
 
 1. [Generate an API key](https://cloud.lambdalabs.com/api-keys) if you don’t
    already have an API key.
 2. Run the following command:
 
-```bash
-curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/file-systems | jq .
-```
+      ```bash
+      curl -u API-KEY: https://cloud.lambdalabs.com/api/v1/file-systems | jq .
+      ```
 
-Replace **API-KEY** with your actual API key.
-**Don’t remove the trailing colon (:).**
+In this command, replace `API-KEY` with your actual API key. **Don’t remove the trailing colon (`:`).**

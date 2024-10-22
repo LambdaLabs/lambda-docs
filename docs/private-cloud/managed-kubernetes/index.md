@@ -42,14 +42,14 @@ After you set up your SSL VPN connection, you can access your dashboard at
 login details for your dashboard can be found in your 1Password vault.
 
 For details on setting up your SSL VPN connection, see
-[Getting started &gt; Establishing a secure connection to your cluster](getting-started#establishing-a-secure-connection).
+[Getting started &gt; Establishing a secure connection to your cluster](getting-started.md#establishing-a-secure-connection).
 
 ### Kubernetes API
 
 The Kubernetes API is available at `https://10.141.0.250:6443` through your SSL
 VPN connection. You can obtain your `kubeconfig` file from the Rancher
 dashboard. For details, see
-[Getting started &gt; Accessing the Kubernetes API](getting-started#accessing-the-kubernetes-api).
+[Getting started &gt; Accessing the Kubernetes API](getting-started.md#accessing-the-kubernetes-api).
 
 ## Storage
 
@@ -162,5 +162,5 @@ allocates one of the remaining IPs (`10.141.3.4-254`) to the service.
 ## Next steps
 
 For details on accessing your cluster, as well as a walkthrough of the
-Rancher dashboard, see the [Managed Kubernetes getting started](getting-started)
+Rancher dashboard, see the [Managed Kubernetes getting started](getting-started.md)
 for Private Cloud.

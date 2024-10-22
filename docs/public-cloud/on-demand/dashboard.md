@@ -1,5 +1,8 @@
 ---
 description: Learn how to use the Lambda Public Cloud dashboard.
+tags:
+  - 1-click clusters
+  - on-demand cloud
 ---
 
 # Using the Lambda Public Cloud dashboard
@@ -31,7 +34,7 @@ To launch an instance:
     :octicons-link-external-16:](https://cloud.lambdalabs.com/instances){target="_blank"}
     in the left sidebar of the dashboard.
 
-    Then, click **Launch instance** at the top-right of the dashboard.
+      Then, click **Launch instance** at the top-right of the dashboard.
 
 2.  Click the instance type that you want to launch.
 
@@ -41,17 +44,17 @@ To launch an instance:
     system](#create-and-manage-persistent-storage-file-systems) that you want to
     attach to your instance.
 
-    If you don't want to or can't attach a persistent storage file system to
-    your instance, click **Don’t attach a filesystem**.
+      If you don't want to or can't attach a persistent storage file system to
+      your instance, click **Don’t attach a filesystem**.
 
 5.  Select the [SSH key](#add-generate-and-delete-ssh-keys) that you want to use
     for your instance. Then, click **Launch instance**.
 
-!!! tip
+    !!! tip
 
-    You can [add additional SSH
-    keys](getting-started.md#is-it-possible-to-use-more-than-one-ssh-key) to your instance once
-    your instance has launched.
+        You can [add additional SSH
+        keys](getting-started.md#is-it-possible-to-use-more-than-one-ssh-key) to your instance once
+        your instance has launched.
 
 6.  Review the license agreements and terms of service. If you agree to them,
     click **I agree to the above** to launch your instance.
@@ -63,10 +66,10 @@ your instance.
 !!! tip
 
     You can also [launch instances using the Cloud
-    API](#launching-instances).
+    API](../cloud-api.md#launching-instances).
 
     You can also use the Cloud API to [get details of a running
-    instance](#getting-details-of-a-specific-instance).
+    instance](../cloud-api.md#getting-details-of-a-specific-instance).
 
 ### Restart instances
 
@@ -106,7 +109,7 @@ You should now see your persistent storage file system listed in the dashboard.
 
 #### Add or generate an SSH key
 
-To add an SSH key that you already have:
+##### Add an existing SSH key
 
 1.  Click [**SSH keys**
     :octicons-link-external-16:](https://cloud.lambdalabs.com/ssh-keys){target="_blank"}
@@ -117,7 +120,7 @@ To add an SSH key that you already have:
 2. In the text input box, paste your public SSH key. Enter a name for your key,
    then click **Add SSH key**.
 
-To generate a new SSH key:
+##### Generate a new SSH key
 
 Instead of pasting your public SSH key as instructed, above, click **Generate a
 new SSH key**. Type in a name for your key, then click **Create**.
@@ -127,7 +130,7 @@ The private key for your new SSH key will automatically download.
 !!! tip
 
     You can also [use the Cloud API to add and generate SSH
-    keys](#add-an-existing-ssh-key-to-your-account).
+    keys](../cloud-api.md#add-an-existing-ssh-key-to-your-account).
 
 #### Delete SSH keys
 

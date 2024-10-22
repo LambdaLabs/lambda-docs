@@ -1,6 +1,7 @@
 ---
 description: Lambda's security posture for 1-Click Clusters
 tags:
+  - 1-click clusters
   - security
 ---
 

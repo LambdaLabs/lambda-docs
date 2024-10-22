@@ -1,3 +1,11 @@
+---
+description: Learn how to get started using your Vector, Vector Pro, or Vector One workstation.
+tags:
+  - vector
+  - vector one
+  - vector pro
+---
+
 # Getting started
 
 ## How do I set up my workstation?

@@ -12,14 +12,14 @@ Below are guidelines to ensure a quick and easy contribution process.
 If you find any issues with the documentation (for example, outdated content,
 broken links, or broken styling), or have suggestions for improvements or new
 documentation, please
-[create an issue](https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new)
+[create an issue](https://github.com/LambdaLabs/lambda-docs/issues/new)
 in GitHub.
 
 ## Pull requests
 
 If you want to create a pull request (thank you!) to fix a bug, improve existing
 documentation, or contribute new documentation, we recommend that you first
-[create an issue](https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new)
+[create an issue](https://github.com/LambdaLabs/lambda-docs/issues/new)
 in GitHub. This reduces the likelihood of you duplicating efforts with someone
 else.
 

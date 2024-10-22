@@ -1,3 +1,11 @@
+---
+description: Learn how to use the Lambda Cloud Team feature.
+tags:
+  - 1-click clusters
+  - automation
+  - on-demand cloud
+---
+
 # Teams
 
 ## Create a team

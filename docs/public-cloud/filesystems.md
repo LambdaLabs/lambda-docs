@@ -11,9 +11,9 @@ datasets and the state of your instance, for example:
 
 *  Packages installed system-wide using `apt-get`.
 *  Python packages installed using `pip`.
-*  [conda](../../education/linux-usage/virtual-environments-containers#creating-a-conda-virtual-environment)
+*  [conda](../education/programming/virtual-environments-containers.md#creating-a-conda-virtual-environment)
    and
-   [Python venv](../../education/linux-usage/virtual-environments-containers#creating-a-python-virtual-environment)
+   [Python venv](../education/programming/virtual-environments-containers.md#creating-a-python-virtual-environment)
    virtual environments.
 
 Lambda GPU Cloud filesystems have a capacity of 8 exabytes, or 8,000,000
@@ -120,10 +120,10 @@ Run the script each time you start an instance.
 
 If you only need to preserve Python packages and not packages installed
 system-wide, you can
-[create a Python virtual environment](../../education/linux-usage/virtual-environments-containers#creating-a-python-virtual-environment).
+[create a Python virtual environment](../education/programming/virtual-environments-containers.md#creating-a-python-virtual-environment).
 
 You can also create a
-[conda environment](../../education/linux-usage/virtual-environments-containers#creating-a-conda-virtual-environment).
+[conda environment](../education/programming/virtual-environments-containers.md#creating-a-conda-virtual-environment).
 
 !!! tip
 

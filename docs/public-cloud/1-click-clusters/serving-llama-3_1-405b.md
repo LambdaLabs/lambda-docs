@@ -1,6 +1,7 @@
 ---
 description: How to serve the Llama 3.1 405B model using a Lambda 1-Click Cluster
 tags:
+  - 1-click clusters
   - distributed training
 ---
 
@@ -44,14 +45,14 @@ export HF_HOME="${SHARED_DIR}/.cache/huggingface"
 export MODEL_REPO=meta-llama/Meta-Llama-3.1-405B-Instruct
 ```
 
-Replace **HEAD-IP** with the IP address of the head node. You can
+Replace `HEAD-IP` with the IP address of the head node. You can
 obtain the IP address from the
 [1-Click Clusters dashboard](https://cloud.lambdalabs.com/one-click-clusters/running).
 
-Replace **FILE-SYSTEM-NAME** with the name of your 1CC's persistent storage
+Replace `FILE-SYSTEM-NAME` with the name of your 1CC's persistent storage
 file system.
 
-Replace **HF-TOKEN** with your Hugging Face User Access Token.
+Replace `HF-TOKEN` with your Hugging Face User Access Token.
 
 Then, run:
 
@@ -118,9 +119,9 @@ export SHARED_DIR=/home/ubuntu/FILE-SYSTEM-NAME
 export HF_HOME="${SHARED_DIR}/.cache/huggingface"
 ```
 
-Replace **HEAD-IP** with the IP address of the head node.
+Replace `HEAD-IP` with the IP address of the head node.
 
-Replace **FILE-SYSTEM-NAME** with the name of your 1CC's persistent storage
+Replace `FILE-SYSTEM-NAME` with the name of your 1CC's persistent storage
 file system.
 
 Run `tmux` to start a new tmux session. Then, run:
@@ -194,7 +195,7 @@ Then, run the following command to begin serving the Llama 3.1 405B model:
 vllm serve "/root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3.1-405B-Instruct/snapshots/SNAPSHOT" --tensor-parallel-size 8 --pipeline-parallel-size 2
 ```
 
-Replace **SNAPSHOT** with the name of the Llama 3.1 405B model snapshot.
+Replace `SNAPSHOT` with the name of the Llama 3.1 405B model snapshot.
 The name of the snapshot should be similar to
 `e04e3022cdc89bfed0db69f5ac1d249e21ee2d30`.
 
@@ -240,48 +241,17 @@ These commands:
 1. Create and activate a
    [Python virtual environment](https://docs.lambdalabs.com/software/virtual-environments-and-docker-containers#creating-a-python-virtual-environment)
    on the worker node.
+1. Download the Open AI chat completion client.
+1. Finally, to test the Llama 3.1 405B model, run:
 
-2. Download the Open AI chat completion client.
+      ```bash
+      python3 ${SHARED_DIR}/inference_test.py
+      ```
 
-Finally, to test the Llama 3.1 405B model, run:
+      You should see output similar to:
 
-```bash
-python3 ${SHARED_DIR}/inference_test.py
-```
+      ```
+      Chat completion results:
+      ChatCompletion(id='chat-8eba7fa7e2f7442aafa82a1683bfc77f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='The 2020 World Series was played at Globe Life Field in Arlington, Texas. This was a neutral site due to COVID-19 restrictions and was also referred to as a "bubble" environment.', role='assistant', function_call=None, tool_calls=[]), stop_reason=None)], created=1721884178, model='/root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3.1-405B-Instruct/snapshots/e04e3022cdc89bfed0db69f5ac1d249e21ee2d30', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=41, prompt_tokens=59, total_tokens=100))
+      ```
 
-You should see output similar to:
-
-```
-Chat completion results:
-ChatCompletion(id='chat-8eba7fa7e2f7442aafa82a1683bfc77f', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='The 2020 World Series was played at Globe Life Field in Arlington, Texas. This was a neutral site due to COVID-19 restrictions and was also referred to as a "bubble" environment.', role='assistant', function_call=None, tool_calls=[]), stop_reason=None)], created=1721884178, model='/root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3.1-405B-Instruct/snapshots/e04e3022cdc89bfed0db69f5ac1d249e21ee2d30', object='chat.completion', service_tier=None, system_fingerprint=None, usage=CompletionUsage(completion_tokens=41, prompt_tokens=59, total_tokens=100))
-```
-
-<!--
-
-First, create a file named `hostfile` on your shared persistent storage file
-by running `touch "${SHARED_DIR}/hostfile`. Add to this file the IP address of
-each of your 1CC worker nodes. Each IP address should be on a new line.
-
-!!! note
-
-    The IP addresses of your worker nodes are on your
-    [Cloud dashboard](https://cloud.lambdalabs.com/one-click-clusters/running).
-
-The file should look like:
-
-```
-172.26.135.252
-172.26.134.16
-172.26.133.73
-```
-
-```bash
-sudo bash "${SHARED_DIR}/run_cluster.sh" \
-    vllm/vllm-openai \
-    "${HEAD_IP}" \
-    --worker \
-    "${HF_HOME}" \
-    --privileged -e NCCL_IB_HCA=^mlx5_0
-```
-
--->

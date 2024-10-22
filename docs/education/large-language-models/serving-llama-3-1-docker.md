@@ -14,8 +14,6 @@ on-demand instance to serve the Llama 3.1 8B and 70B models. You'll serve the
 model using [vLLM running inside of a Docker
 container](https://docs.vllm.ai/en/latest/serving/deploying_with_docker.html).
 
-{% include "../../includes/need-hugging-face-llama.md" %}
-
 ## Start the vLLM API server
 
 If you haven't already, use the

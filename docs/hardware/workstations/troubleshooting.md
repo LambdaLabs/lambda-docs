@@ -1,8 +1,9 @@
 ---
+description: Troubleshoot your Lambda Vector, Vector Pro, or Vector One workstation.
 tags:
-  - BIOS
-  - monitor
-  - WRX80
+  - vector
+  - vector one
+  - vector pro
 ---
 
 # Troubleshooting Workstations and Desktops

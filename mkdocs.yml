@@ -1,6 +1,6 @@
 site_description: Lambda GPU Cloud documentation
-site_name: Lambda Docs [PROOF OF CONCEPT]
-site_url: https://cbrownstein-lambda.github.io/lambda-docs-mkdocs/
+site_name: Lambda Docs
+site_url: https://docs.lambdalabs.com/
 theme:
   name: material
   features:
@@ -34,6 +34,7 @@ nav:
     - public-cloud/firewalls.md
     - public-cloud/teams.md
     - public-cloud/cloud-api.md
+    - public-cloud/lambda-chat-api.md
     - On-Demand:
       - public-cloud/on-demand/index.md
       - public-cloud/on-demand/getting-started.md
@@ -41,9 +42,10 @@ nav:
       - public-cloud/on-demand/billing.md
       - public-cloud/on-demand/guest-agent.md
     - 1-Click Clusters:
-      - public-cloud/1-click-clusters/getting-started.md
+      - public-cloud/1-click-clusters/index.md
       - public-cloud/1-click-clusters/serving-llama-3_1-405b.md
       - public-cloud/1-click-clusters/security-posture.md
+      - public-cloud/1-click-clusters/support.md
     - Additional resources:
       - 'Forum': 'https://deeptalk.lambdalabs.com/'
       - 'Blog': 'https://lambdalabs.com/blog'
@@ -51,8 +53,7 @@ nav:
       - 'Main site': 'https://lambdalabs.com/'
       - 'Tags index': 'tags.md'
     - We welcome your feedback!:
-      # URL needs to change post migration
-      - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Private Cloud:
     - private-cloud/index.md
     - Managed Kubernetes:
@@ -66,13 +67,11 @@ nav:
       - 'Tags index': 'tags.md'
     - We welcome your feedback!:
       # URL needs to change post migration
-      - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Hardware:
       - hardware/index.md
       - Servers:
-        - Unboxing and Setup:
-          - hardware/servers/unboxing-and-setup/power-and-network-cables.md
-          - hardware/servers/unboxing-and-setup/using-bmc-ipmi.md
+          - hardware/servers/getting-started.md
       - Workstations:
           - hardware/workstations/getting-started.md
           - hardware/workstations/troubleshooting.md
@@ -84,22 +83,32 @@ nav:
         - 'Tags index': 'tags.md'
       - We welcome your feedback!:
         # URL needs to change post migration
-        - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+        - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Education:
     - education/index.md
+    - education/tutorial-getting-started-with-training-a-machine-learning-model.md
     - Generative AI (GAI):
       - education/generative-ai/flux-prompt-to-image.md
     - Large language models (LLMs):
+      - education/large-language-models/deploying-a-llama-3-inference-endpoint.md
+      - education/large-language-models/k8s-ollama-llama-3-2.md
+      - education/large-language-models/kubeai-hermes-3.md
+      - education/large-language-models/serving-llama-3-1-405b.md
       - education/large-language-models/serving-llama-3-1-docker.md
-      - education/large-language-models/lambda-chat-api.md
+    - Linux usage and system administration:
+      - education/linux-usage/basic-linux-commands-and-system-administration.md
+      - education/linux-usage/configuring-software-raid.md
+      - education/linux-usage/lambda-stack-and-recovery-images.md
+      - education/linux-usage/troubleshooting-and-debugging.md
+      - education/linux-usage/using-the-lambda-bug-report-to-troubleshoot-your-system.md
+      - education/linux-usage/using-the-nvidia-bug-report.log-file-to-troubleshoot-your-system.md
     - Programming:
+      - education/programming/virtual-environments-containers.md
       - education/programming/vs-code-lambda-chat.md
     - Scheduling and orchestration:
-      - education/scheduling-and-orchestration/dstack-vllm-llama-3-1.md
+      - education/scheduling-and-orchestration/deploying-models-with-dstack.md
       - education/scheduling-and-orchestration/skypilot-deploy-kubernetes.md
-    - Basic Linux usage and system administration:
-      - education/linux-usage/virtual-environments-containers.md
-    - Additional resources: 
+    - Additional resources:
       - 'Forum': 'https://deeptalk.lambdalabs.com/'
       - 'Blog': 'https://lambdalabs.com/blog'
       - 'YouTube': 'https://www.youtube.com/c/LambdaLabs'
@@ -107,7 +116,7 @@ nav:
       - 'Tags index': 'tags.md'
     - We welcome your feedback!:
       # URL needs to change post migration
-      - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
 
 markdown_extensions:
   - admonition
@@ -150,8 +159,39 @@ plugins:
   - social
   - redirects:
       redirect_maps:
-        'one-click-clusters/getting-started.md': 'public-cloud/1-click-clusters/getting-started.md'
         'on-demand-cloud/getting-started.md': 'public-cloud/on-demand/getting-started.md'
+        'on-demand-cloud/using-skypilot-to-deploy-a-kubernetes-cluster.md': 'education/scheduling-and-orchestration/skypilot-deploy-kubernetes.md'
+        'on-demand-cloud/team.md': 'public-cloud/teams.md'
+        'on-demand-cloud/deploying-llama-3.2-3b-in-a-kubernetes-k8s-cluster.md': 'education/large-language-models/k8s-ollama-llama-3-2.md'
+        'on-demand-cloud/integrating-lambda-chat-into-vs-code.md': 'education/programming/vs-code-lambda-chat.md'
+        'on-demand-cloud/how-to-serve-the-flux.1-prompt-to-image-models-using-lambda-cloud-on-demand-instances.md': 'education/generative-ai/flux-prompt-to-image.md'
+        'on-demand-cloud/firewall.md': 'public-cloud/firewalls.md'
+        'on-demand-cloud/cloud-api.md': 'public-cloud/cloud-api.md'
+        'on-demand-cloud/overview.md': 'public-cloud/on-demand/index.md'
+        'on-demand-cloud/demos.md': 'public-cloud/on-demand/demos.md'
+        'on-demand-cloud/tutorial-getting-started-with-training-a-machine-learning-model.md': 'education/tutorial-getting-started-with-training-a-machine-learning-model.md'
+        'on-demand-cloud/deploying-a-llama-3-inference-endpoint.md': 'education/large-language-models/deploying-a-llama-3-inference-endpoint.md'
+        'on-demand-cloud/using-the-lambda-chat-completions-api.md': 'public-cloud/lambda-chat-api.md'
+        'on-demand-cloud/billing.md': 'public-cloud/on-demand/billing.md'
+        'on-demand-cloud/getting-started.md': 'public-cloud/on-demand/getting-started.md'
+        'on-demand-cloud/dashboard.md': 'public-cloud/on-demand/dashboard.md'
+        'on-demand-cloud/how-to-serve-the-llama-3.1-8b-and-70b-models-using-lambda-cloud-on-demand-instances.md': 'education/large-language-models/serving-llama-3-1-docker.md'
+        'on-demand-cloud/deploying-models-with-dstack.md': 'education/scheduling-and-orchestration/deploying-models-with-dstack.md'
+        'on-demand-cloud/file-systems.md': 'public-cloud/filesystems.md'
+        'tensorbook/getting-started.md': 'hardware/tensorbook/getting-started.md'
+        'workstations/troubleshooting-workstations-and-desktops.md': 'hardware/workstations/troubleshooting.md'
+        'workstations/getting-started.md': 'hardware/workstations/getting-started.md'
+        'software/virtual-environments-and-docker-containers.md': 'education/programming/virtual-environments-containers.md'
+        'software/using-the-lambda-bug-report-to-troubleshoot-your-system.md': 'education/linux-usage/using-the-lambda-bug-report-to-troubleshoot-your-system.md'
+        'software/using-the-nvidia-bug-report.log-file-to-troubleshoot-your-system.md': 'education/linux-usage/using-the-nvidia-bug-report.log-file-to-troubleshoot-your-system.md'
+        'software/basic-linux-commands-and-system-administration.md': 'education/linux-usage/basic-linux-commands-and-system-administration.md'
+        'software/troubleshooting-and-debugging.md': 'education/linux-usage/troubleshooting-and-debugging.md'
+        'software/lambda-stack-and-recovery-images.md': 'education/linux-usage/lambda-stack-and-recovery-images.md'
+        'software/configuring-software-raid.md': 'education/linux-usage/configuring-software-raid.md'
+        'servers/getting-started.md': 'hardware/servers/getting-started.md'
+        '1-click-clusters/serving-llama-3.1-405b-on-a-lambda-1-click-cluster.md': 'education/large-language-models/serving-llama-3-1-405b.md'
+        '1-click-clusters/getting-started.md': 'public-cloud/1-click-clusters/index.md'
+        '1-click-clusters/security-posture.md': 'public-cloud/1-click-clusters/security-posture.md'
   - tags:
       tags_file: tags.md
 extra_css:

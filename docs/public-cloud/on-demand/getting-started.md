@@ -1,5 +1,9 @@
 ---
 description: Learn how to start using Lambda Public Cloud on-demand instances.
+tags:
+  - 1-click clusters
+  - automation
+  - on-demand cloud
 ---
 
 # Getting started
@@ -118,60 +122,56 @@ To open Jupyter Notebook on your instance:
 
 To install another version of Python alongside the preinstalled version:
 
-1. Run:
+1. Run the following command:
 
-   ```bash
-   sudo apt -y update && sudo apt -y install pythonVERSION-full
-   ```
+      ```bash
+      sudo apt -y update && sudo apt -y install pythonVERSION-full
+      ```
 
-   Replace **VERSION** with the Python version you want to install, for
-   example, `3.13`. Make sure `-full` is appended to the Python version,
-   otherwise, you won't have the `venv` module needed to create Python
-   virtual environments.
+      Replace `VERSION` with the Python version you want to install, for
+      example, `3.13`. Make sure `-full` is appended to the Python version,
+      otherwise, you won't have the `venv` module needed to create Python
+      virtual environments.
 
-   As a complete example, if you want to install Python version 3.13, run:
+      As a complete example, if you want to install Python version 3.13, run:
 
-   ```bash
-   sudo apt -y update && sudo apt -y install python3.13-full
-   ```
+      ```bash
+      sudo apt -y update && sudo apt -y install python3.13-full
+      ```
 
-2. Run:
+1. Run the following command to create a Python virtual environment:
 
-   ```bash
-   pythonVERSION -m venv VENV-NAME
-   ```
+      ```bash
+      pythonVERSION -m venv VENV-NAME
+      ```
 
-   to create a Python virtual environment.
+      Replace `VERSION` with the Python version you installed in the previous
+      step. Replace `VENV-NAME` with the name you want to give your virtual
+      environment.
 
-   Replace **VERSION** with the Python version you installed in the previous
-   step. Replace **VENV-NAME** with the name you want to give your virtual
-   environment.
+1. Run the following command to activate the virtual environment:
 
-   Then, run:
+      ```bash
+      source VENV-NAME/bin/activate
+      ```
 
-   ```bash
-   source VENV-NAME/bin/activate
-   ```
+      Replace `VENV-NAME` with the name you gave your virtual environment.
 
-   Replace **VENV-NAME** with the name you gave your virtual environment.
+      As a complete example, if you want to create a virtual environment named
+      `my-virtual-environment` using Python version 3.13 (installed in the example
+      in the previous step), run:
 
-   As a complete example, if you want to create a virtual environment named
-   `my-virtual-environment` using Python version 3.13 (installed in the example
-   in the previous step), run:
+      ```bash
+      python3.13 -m venv my-virtual-environment
+      source my-virtual-environment/bin/activate
+      ```
 
-   ```bash
-   python3.13 -m venv my-virtual-environment
-   source my-virtual-environment/bin/activate
-   ```
+1. Run the following command to confirm that your virtual environment is using your desired Python
+   version:
 
-   Run:
-
-   ```bash
-   python --version
-   ```
-
-   to confirm that your virtual environment is using your desired Python
-   version.
+      ```bash
+      python --version
+      ```
 
 ## Can I upgrade to the latest Ubuntu release?
 
@@ -377,7 +377,7 @@ Next, run:
 nmap -Pn INSTANCE-IP-ADDRESS
 ```
 
-Replace **INSTANCE-IP-ADDRESS** with your instance's IP address, which you can
+Replace `INSTANCE-IP-ADDRESS` with your instance's IP address, which you can
 get from the [Cloud dashboard :octicons-link-external-16:](https://cloud.lambdalabs.com/instances){target="_blank"}.
 
 The command will output, for example:
@@ -415,9 +415,9 @@ To close your Lambda GPU Cloud account:
 1. Back up all of your data on your instances as well as in your persistent
    storage file systems.
 
-!!! tip
+      !!! tip
 
-    [You can use rsync to back up your data](#).
+       [You can use rsync to back up your data](#).
 
 2. Terminate all of your instances from the [Cloud dashboard](#) or using the
    [Cloud API](#).

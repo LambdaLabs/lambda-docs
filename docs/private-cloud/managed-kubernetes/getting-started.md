@@ -12,7 +12,7 @@ cluster dashboard. It also provides guidance for configuring and running
 workloads on your Private Cloud cluster.
 
 For an overview of your Managed Kubernetes cluster's default specifications
-and configuration, see the [Managed Kubernetes overview](..) for Private Cloud.
+and configuration, see the [Managed Kubernetes overview](index.md) for Private Cloud.
 
 ## Establishing a secure connection to your cluster { #establishing-a-secure-connection }
 
