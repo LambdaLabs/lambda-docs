@@ -30,14 +30,14 @@ A bug in Ubuntu 22.04 can cause the front aux port to not recognize audio device
 If your machine does not recognize audio devices connected to the front aux port, try using the rear audio port, which is lime green in color.
 If you still experience audio issues with the rear port, here are some further steps you can take:
 
-#### Update drivers
-Update your drivers by running the following command in the terminal:
+#### Update packages and drivers
+Install the latest software packages and device drivers by running the following command in the terminal:
 
 ```bash
 sudo apt-get update && sudo apt-get full-upgrade && sudo reboot
 ```
 
-After updating the drivers, test the aux ports again to see if the issue is resolved.
+After the system restarts, test the aux ports again to see if the issue is resolved.
 
 #### Reinstall audio packages
 If the issue persists after updating the drivers, try reinstalling the audio packages using the following commands:
