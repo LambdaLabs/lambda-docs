@@ -1,9 +1,11 @@
 ---
 description: Learn how to install Lambda Stack on air-gapped servers and workstations.
 tags:
-  - api
-  - llama
-  - llm
+  - scalar
+  - security
+  - vector
+  - vector one
+  - vector pro
 ---
 
 # Installing Lambda Stack on air-gapped servers and workstations
