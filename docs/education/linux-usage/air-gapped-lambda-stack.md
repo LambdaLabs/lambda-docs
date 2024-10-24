@@ -20,11 +20,11 @@ laboratories, and financial institutions.
 
 This guide shows you how to:
 
-1. [Download the complete Lambda Stack repository](#download-the-lambda-stack-repository).
-1. [Copy the Lambda Stack repository to a USB stick](#).
-1. [Copy the Lambda Stack repository to an air-gapped system](#copy-the-lambda-stack-repository-to-the-air-gapped-system).
-1. [Configure the air-gapped system to use the Lambda Stack repository](#configure-the-air-gapped-system-to-use-the-lambda-stack-repository).
-1. Install Lambda Stack on the air-gapped system.
+1. [Download the complete Lambda Stack repository](#download-the-complete-lambda-stack-repository).
+1. [Copy the Lambda Stack repository to a USB stick](#copy-the-lambda-stack-repository-to-a-usb-stick).
+1. [Copy the Lambda Stack repository and related files to an air-gapped system](#copy-the-lambda-stack-repository-to-the-air-gapped-system).
+1. [Configure the air-gapped system to use the local Lambda Stack repository](#configure-the-air-gapped-system-to-use-the-local-lambda-stack-repository).
+1. [Install Lambda Stack on the air-gapped system](#install-lambda-stack-on-the-air-gapped-system).
 
 For this guide, you need:
 
@@ -39,7 +39,7 @@ This guide assumes you already have Ubuntu installed on your air-gapped system
 and only seek to install Lambda Stack. This guide also assumes that you know how
 to mount and unmount filesystems.
 
-## Download the Lambda Stack repository
+## Download the complete Lambda Stack repository
 
 1. On the connected system, install `apt-mirror` by running the following
    command in a terminal:
@@ -79,7 +79,7 @@ to mount and unmount filesystems.
     wget -P ~/ https://lambdalabs.com/install-lambda-stack.sh
     ```
 
-## Copy the Lambda Stack repository to a USB stick
+## Copy the Lambda Stack repository and related files to a USB stick
 
 1. Plug the USB stick into the connected system. Mount the filesystem if it's
    not automatically mounted and use `cd` change into the filesystem mount
@@ -100,7 +100,7 @@ to mount and unmount filesystems.
 
 1. Unmount the filesystem, then unplug the USB stick.
 
-## Copy the Lambda Stack repository and other files to the air-gapped system
+## Copy the Lambda Stack repository and related files to the air-gapped system
 
 1. Plug the USB stick into the air-gapped system. Mount the filesystem if it's
    not automatically mounted and use `cd` to change into the filesystem mount
