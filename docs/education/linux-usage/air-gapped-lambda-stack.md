@@ -79,9 +79,10 @@ This guide also assumes that you know how to mount and unmount filesystems.
 
 ## Copy the Lambda Stack repository and related files to a USB stick
 
-1. Plug the USB stick into the connected system. Mount the filesystem if it's
-   not automatically mounted and use `cd` change into the filesystem mount
-   point.
+1. Plug the USB stick into the connected system.
+
+    Mount the filesystem if it's not automatically mounted and use `cd` change
+    into the filesystem mount point.
 
 1. Copy the Lambda Stack repository to the USB stick by running:
 
@@ -100,9 +101,10 @@ This guide also assumes that you know how to mount and unmount filesystems.
 
 ## Copy the Lambda Stack repository and related files to the air-gapped system
 
-1. Plug the USB stick into the air-gapped system. Mount the filesystem if it's
-   not automatically mounted and use `cd` to change into the filesystem mount
-   point.
+1. Plug the USB stick into the air-gapped system.
+
+    Mount the filesystem if it's not automatically mounted and use `cd` to
+    change into the filesystem mount point.
 
 1. Copy the Lambda Stack repository from the USB stick to the air-gapped system
    by running:
