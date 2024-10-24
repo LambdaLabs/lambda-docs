@@ -41,8 +41,9 @@ filesystems.
 
 ## Download the complete Lambda Stack repository
 
-1. On the connected system, install `apt-mirror` by running the following
-   command:
+On the connected system:
+
+1. Install `apt-mirror` by running the following command:
 
     ```bash
     sudo apt update && sudo apt -y install apt-mirror
@@ -80,7 +81,9 @@ filesystems.
 
 ## Copy the Lambda Stack repository and related files to a USB stick
 
-1. Plug the USB stick into the connected system.
+On the connected system:
+
+1. Plug in the USB stick.
 
     Mount the filesystem if it's not automatically mounted and use `cd` change
     into the filesystem mount point.
@@ -102,7 +105,9 @@ filesystems.
 
 ## Copy the Lambda Stack repository and related files to the air-gapped system
 
-1. Plug the USB stick into the air-gapped system.
+On the air-gapped system:
+
+1. Plug in the USB stick.
 
     Mount the filesystem if it's not automatically mounted and use `cd` to
     change into the filesystem mount point.
@@ -124,6 +129,8 @@ filesystems.
 1. Unmount the filesystem, then unplug the USB stick.
 
 ## Configure the air-gapped system to use the local Lambda Stack repository
+
+On the air-gapped system:
 
 1. Install the Lambda Stack repository configuration package by running:
 
@@ -159,6 +166,8 @@ filesystems.
     ```
 
 ## Install Lambda Stack on the air-gapped system
+
+On the air-gapped system:
 
 - Run:
 
