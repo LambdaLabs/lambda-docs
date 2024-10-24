@@ -27,6 +27,7 @@ hide:
 - [Troubleshooting and debugging](linux-usage/troubleshooting-and-debugging.md)
 - [Using the Lambda bug report to troubleshoot your system](linux-usage/using-the-lambda-bug-report-to-troubleshoot-your-system.md)
 - [Using the nvidia-bug-report.log file to troubleshoot your system](linux-usage/using-the-nvidia-bug-report.log-file-to-troubleshoot-your-system.md)
+- [Installing Lambda Stack on air-gapped servers and workstations](linux-usage/air-gapped-lambda-stack.md)
 
 ## Programming
 
