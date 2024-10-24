@@ -102,6 +102,7 @@ nav:
       - education/linux-usage/troubleshooting-and-debugging.md
       - education/linux-usage/using-the-lambda-bug-report-to-troubleshoot-your-system.md
       - education/linux-usage/using-the-nvidia-bug-report.log-file-to-troubleshoot-your-system.md
+      - education/linux-usage/air-gapped-lambda-stack.md
     - Programming:
       - education/programming/virtual-environments-containers.md
       - education/programming/vs-code-lambda-chat.md
