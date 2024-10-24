@@ -36,7 +36,8 @@ For this guide, you need:
   be formatted with an `ext4` filesystem.
 
 This guide assumes you already have Ubuntu installed on the air-gapped system.
-This guide also assumes that you know how to mount and unmount filesystems.
+This guide also assumes that you know how to format, mount, and unmount
+filesystems.
 
 ## Download the complete Lambda Stack repository
 
