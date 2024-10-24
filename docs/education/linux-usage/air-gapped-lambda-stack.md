@@ -28,10 +28,8 @@ This guide shows you how to:
 
 For this guide, you need:
 
-- An
-  [Ubuntu Desktop](https://ubuntu.com/download/desktop){ .external target="_blank"}
-  system connected to the internet (referred to in this tutorial as the
-  "connected system") that you can use to:
+- An Ubuntu system connected to the internet (referred to in this tutorial as
+  the "connected system") that you can use to:
     - Download the Lambda Stack repository.
     - Copy the repository to a USB stick.
 - A USB stick (USB drive or thumb drive) with a capacity of at least 8 GiB. The
