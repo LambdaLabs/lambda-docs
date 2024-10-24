@@ -125,8 +125,8 @@ filesystems.
 
 ## Configure the air-gapped system to use the local Lambda Stack repository
 
-1. Modify the `install-lambda-stack.sh` (the Lambda Stack installation script)
-   in your home directory by removing the lines:
+1. In your home directory, modify the `install-lambda-stack.sh` (the Lambda
+   Stack installation script) by removing the lines:
 
     ```{ .text .no-copy }
     # Install Lambda repository
