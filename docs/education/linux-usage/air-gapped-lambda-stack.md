@@ -125,18 +125,6 @@ filesystems.
 
 ## Configure the air-gapped system to use the local Lambda Stack repository
 
-1. In your home directory, modify the `install-lambda-stack.sh` (the Lambda
-   Stack installation script) by removing the lines:
-
-    ```{ .text .no-copy }
-    # Install Lambda repository
-    LAMBDA_REPO=$(mktemp)
-    stderr "Installing Lambda Stack Repository."
-    wget --quiet -O"${LAMBDA_REPO}" "${LAMBDA_REPO_URL}"
-    sudo dpkg -i "${LAMBDA_REPO}"
-    rm -f "${LAMBDA_REPO}"
-    ```
-
 1. Install the Lambda Stack repository configuration package by running:
 
     ```bash
@@ -156,6 +144,18 @@ filesystems.
     Pin: release o=lambdalabs.com
     Pin-Priority: 1001
     EOF
+    ```
+
+1. In your home directory, modify the `install-lambda-stack.sh` (the Lambda
+   Stack installation script) by removing the lines:
+
+    ```{ .text .no-copy }
+    # Install Lambda repository
+    LAMBDA_REPO=$(mktemp)
+    stderr "Installing Lambda Stack Repository."
+    wget --quiet -O"${LAMBDA_REPO}" "${LAMBDA_REPO_URL}"
+    sudo dpkg -i "${LAMBDA_REPO}"
+    rm -f "${LAMBDA_REPO}"
     ```
 
 ## Install Lambda Stack on the air-gapped system
