@@ -32,24 +32,22 @@ For this guide, you need:
   the "connected system") that you can use to:
     - Download the Lambda Stack repository.
     - Copy the repository to a USB stick.
-- A USB stick (USB drive or thumb drive) with a capacity of at least 8 GiB. The
-  USB stick should be formatted with an `ext4` filesystem.
+- An 8 GiB or larger USB stick (USB drive or thumb drive). The USB stick should
+  be formatted with an `ext4` filesystem.
 
-This guide assumes you already have Ubuntu installed on your air-gapped system
-and only seek to install Lambda Stack. This guide also assumes that you know how
-to mount and unmount filesystems.
+This guide assumes you already have Ubuntu installed on the air-gapped system.
+This guide also assumes that you know how to mount and unmount filesystems.
 
 ## Download the complete Lambda Stack repository
 
 1. On the connected system, install `apt-mirror` by running the following
-   command in a terminal:
+   command:
 
     ```bash
     sudo apt update && sudo apt -y install apt-mirror
     ```
 
-1. Run the following command to configure `apt-mirror` to download the Lambda
-   Stack repository:
+1. Configure `apt-mirror` to download the Lambda Stack repository by running:
 
     ```bash
     cat <<EOF | sudo tee /etc/apt/mirror.list
