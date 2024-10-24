@@ -65,7 +65,7 @@ This guide also assumes that you know how to mount and unmount filesystems.
 
     The repository is downloaded once you see:
 
-    ```{ .text .no-copy}
+    ```{ .text .no-copy }
     Post Mirror script has completed. See above output for any possible errors.
     ```
 
